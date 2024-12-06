@@ -1,0 +1,58 @@
+@import "../../../../../assets/styles/_mixins";
+.todo {
+
+  // .todo__input-container
+
+  &__input-container {
+    width: 100%;
+    display: flex;
+    background-color: #000;
+    opacity: 0.8;
+    @include adaptiveValue("column-gap", 30, 10);
+  }
+
+  // .todo__input
+
+  &__input {
+    @include adaptiveValue("font-size", 32, 18);
+    @include adaptiveValue("padding-block", 20, 10);
+    @include adaptiveValue("padding-inline", 50, 15);
+    font-family: "Quando", sans-serif;
+    letter-spacing: toRem(4);
+    border-radius: toRem(8);
+    border: toRem(0.5) solid #ffffff;
+
+    &:focus {
+      border: toRem(1) solid #aea053;
+
+      outline: none;
+    }
+  }
+
+  // .todo__btn
+
+  &__btn {
+
+    @include adaptiveValue("font-size", 48, 18);
+    @include adaptiveValue("padding-block", 20, 10);
+    @include adaptiveValue("padding-inline", 50, 15);
+    border-radius: toRem(8);
+    border: toRem(0.5) solid #fff;
+    background-color: #000;
+    // opacity: 0.8;
+    transition: all 0.3s;
+    text-shadow: toRem(-4) toRem(-2) 0 #000,
+    toRem(-4) toRem(-2) toRem(12) hsl(0deg 1.7% 50.22%),
+    toRem(7) toRem(5) toRem(5) #000,
+    toRem(3) toRem(2) 0 #000;
+    color: #aea053;
+
+    &:hover {
+      transform: scale(1.06);
+      transition: all 0.4s;
+      box-shadow: inset 0 0 toRem(15) #9f9351;
+      color: #9f9351;
+    }
+  }
+}
+

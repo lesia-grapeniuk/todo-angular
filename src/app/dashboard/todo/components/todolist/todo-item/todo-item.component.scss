@@ -1,0 +1,124 @@
+// @import "../../../../../../assets/styles/_reset";
+@import "../../../../../../assets/styles/_mixins";
+
+.todos-container {
+  // .todos-container__block
+
+  &__block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include adaptiveValue("gap", 28, 8);
+    @include adaptiveValue("font-size", 24, 16);
+    @include adaptiveValue("padding-block", 15, 10);
+    @include adaptiveValue("padding-inline", 30, 15);
+    align-items: center;
+    font-family: "Quando", sans-serif;
+    letter-spacing: toRem(2);
+    border-radius: toRem(8);
+    border: toRem(0.5) solid #ffffff;
+    transition: 0.2s;
+
+    &:hover {
+      border-color: #9f9351;
+      transition: 0.5s;
+      transform: scale(1.03);
+    }
+  }
+
+  &__text {
+    padding: toRem(5);
+    @include adaptiveValue("font-size", 24, 12);
+    flex: 1 1 auto;
+    @include adaptiveValue('width', 650, 140);
+    word-wrap: break-word;
+  }
+
+  // .todos-container__checkbox
+
+  &__checkbox {
+    @include adaptiveValue("width", 25, 15);
+    @include adaptiveValue("height", 25, 15);
+    cursor: pointer;
+    appearance: none;
+    border: toRem(2) solid #b38d3b;
+    border-radius: toRem(4);
+    background-color: #fffbe6;
+    position: relative;
+  }
+
+  &__checkbox:checked {
+    background-color: #b38d3b;
+    border: toRem(2) solid #b38d3b;
+  }
+
+  &__checkbox:checked::before {
+    content: "✔";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: toRem(14);
+  }
+
+  // .todos-container__btn-edit-text
+
+  &__btn-edit-text,
+  &__delete-block,
+  &__btn-edit-text-confirm {
+    @include adaptiveValue("width", 35, 25);
+    @include adaptiveValue("height", 35, 25);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    vertical-align: middle;
+    filter: invert(100%);
+    &:hover {
+      transform: scale(1.06);
+      cursor: pointer;
+    }
+
+    &:active {
+      filter: saturate(-50%);
+    }
+  }
+
+  &__delete-block {
+    background-image: url(../../../../../../assets/icons/trash-icon.svg);
+  }
+  &__btn-edit-text {
+    background-image: url(../../../../../../assets/icons/edit.svg);
+  }
+  &__btn-edit-text-confirm {
+    background-image: url(../../../../../../assets/icons/confirm.svg);
+  }
+  // .todos-container__delete-text
+
+  &__delete-block {
+  }
+
+  &__btn-edit-text,
+  __delete-text {
+    @include adaptiveValue("width", 35, 25);
+    @include adaptiveValue("height", 35, 25);
+    // background-image: url(../src/assets/images/icons/trash-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    vertical-align: middle;
+    filter: invert(100%);
+    &:hover {
+      transform: scale(1.06);
+      cursor: pointer;
+    }
+
+    &:active {
+      filter: saturate(-50%);
+    }
+  }
+}
+
+.strikethrough {
+  text-decoration: line-through #b38d3b;
+}

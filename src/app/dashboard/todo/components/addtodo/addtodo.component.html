@@ -1,0 +1,13 @@
+<div class="todo__input-container">
+  <input
+    (keydown.enter)="addText()"
+    [(ngModel)]="todoText"
+    class="todo__input"
+    type="text"
+    placeholder="Write here...">
+  <button
+    (click)="addText()"
+    class="todo__btn">
+    Ok
+  </button>
+</div>

@@ -1,0 +1,16 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Quando:regular);
+
+@import "./assets/styles/_reset";
+@import "./assets/styles/_variables";
+@import "./assets/styles/_mixins";
+body {
+  height: 100vh;
+
+  [class*="__container"] {
+    max-width: toRem(1320);
+    padding-inline: toRem(15);
+    margin: 0 auto;
+  }
+}

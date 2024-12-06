@@ -1,0 +1,22 @@
+<div class="todos-container__block" *ngIf="todo.text">
+  <input
+    (click)="isChekedText()"
+    *ngIf="!isEditing"
+    [(ngModel)]='todo.isDone'
+    class="todos-container__checkbox"
+    type="checkbox">
+
+  <input *ngIf="isEditing" [(ngModel)]="todo.text" #editInput class="todos-container__edit-input" type="text"
+    (blur)="confirmEdit()" (keydown.enter)="confirmEdit()">
+
+  <span *ngIf="!isEditing" [class.strikethrough]="todo.isDone" class="todos-container__text">
+    {{ todo.text }}
+  </span>
+
+  <button
+  (click)="editText()"
+  [ngClass]="{'todos-container__btn-edit-text-confirm': isEditing,
+    'todos-container__btn-edit-text' : !isEditing}">
+  </button>
+  <button *ngIf="!isEditing" (click)="toRemoveBlock()" class="todos-container__delete-block"></button>
+</div>
