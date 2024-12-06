@@ -1,4 +1,0 @@
-<div class="todos-container">
-  <app-todo-item *ngFor="let todo of todos; let i = index" [todo]="todo" (checkedText)="onCompleteTodo(i, $event)"
-    (editedText)="onUpdateText(i, $event)" (removeBlock)="onRemoveBlock(i)"></app-todo-item>
-</div>
