@@ -1,27 +1,95 @@
-# TodoAngular
+# 📝 Angular ToDo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+A responsive and interactive ToDo application built with Angular 17+.  
+This project demonstrates core Angular concepts such as component-based structure, two-way data binding, validation, routing, and LocalStorage persistence.
 
-## Development server
+## 🔧 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- ✅ Add, complete, and delete tasks  
+- 🔁 Tasks are saved to **LocalStorage** and persist across browser sessions  
+- 🚫 Input validation (prevents adding empty tasks)  
+- 📱 Fully **responsive design** for mobile, tablet, and desktop  
+- 🎨 Custom SCSS styling using BEM methodology  
 
-## Code scaffolding
+## 🚀 Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+👉 [Try the app live](https://lesia-grapeniuk.github.io/todo-angular/)
 
-## Build
+## 🖼️ Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+> _Add a screenshot here if desired:_  
+> ![ToDo Preview](./src/assets/screenshot.png)
 
-## Running unit tests
+## 🧰 Tech Stack
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Angular 17+**  
+- **TypeScript**  
+- **SCSS**  
+- **HTML5**  
+- **LocalStorage API**  
+- **Responsive design with media queries**
 
-## Running end-to-end tests
+## 🧠 Key Angular Concepts Used
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Component-based architecture  
+- Two-way binding with `[(ngModel)]`  
+- Structural directives: `*ngFor`, `*ngIf`  
+- Event binding and local state  
+- Browser storage  
+- Form validation  
+- Routing (can be added later)
 
-## Further help
+## 📁 Project Structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+src/
+├── app/
+│ ├── dashboard/todo/components/
+│ │ ├── addtodo/ # Add new task
+│ │ │ ├── addtodo.component.html
+│ │ │ ├── addtodo.component.scss
+│ │ │ └── addtodo.component.ts
+│ │ ├── title/ # Section title component
+│ │ │ ├── title.component.html
+│ │ │ ├── title.component.scss
+│ │ │ └── title.component.ts
+│ │ └── todolist/ # Task list & single task display
+│ │ ├── todolist.component.html
+│ │ ├── todolist.component.scss
+│ │ └── todolist.component.ts
+│ │ ├── todo.component.html
+│ │ ├── todo.component.scss
+│ │ └── todo.component.ts
+│
+│ ├── shared/ # Shared resources
+│ │ ├── interfaces/
+│ │ │ ├── AuthorizationData.ts
+│ │ │ ├── todo.ts
+│ │ │ └── user-registration-data.ts
+│ │ ├── services/
+│ │ │ ├── local-storage-registration-api.service.ts
+│ │ │ └── local-storage.service.ts
+│ │ └── ui-ux-components/
+│ │ ├── footer.component.ts
+│ │ └── header.component.ts
+│
+│ ├── task.model.ts
+│ ├── app.component.html
+│ ├── app.component.scss
+│ ├── app.component.ts
+│ ├── app.module.ts
+│ └── app-routing.module.ts
+│
+├── assets/
+│ ├── icons/
+│ ├── images/
+│ └── styles/
+│
+├── environments/
+│ ├── environment.ts
+│ └── environment.prod.ts
+│
+├── index.html
+├── main.ts
+├── styles.scss
+└── angular.json
+
